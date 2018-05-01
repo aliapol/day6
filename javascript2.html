@@ -1,0 +1,70 @@
+<script type="text/javascript">  
+"use strict";
+ 
+
+
+ 
+let healthgame = prompt("Do you want to play a game?");
+    if (healthgame === "yes"){
+        let user = (prompt("What's your name?"));         
+    
+    
+{ 
+//let user = "";
+let userWins = 0;  //Set User Wins to 0
+let grantWins = 0; //Set Grant Wins to 0
+let userHealth = 40; //Set User Health to 0
+let grantHealth = 10; //Set Grand Health to 0
+
+
+while (userWins < 3 && grantWins < 3) {  // While the User and Grant have won less than 3 times do this:
+
+ let random = (Math.floor(Math.random() * 2) + 1); //Set random number. Is it making a positive number? not sure...
+
+ grantHealth = grantHealth - random; //Calculate Grant's health
+ console.log(`Grant's health is at ${grantHealth}`); //Log to console
+ userHealth = userHealth - random; //Calculate User's health
+ console.log(`${user}'s health is at ${userHealth}`); //log to console
+
+ if ((grantHealth === 0 || grantHealth < 0) && userWins < 3) { //check if grantHealth is equal to or less than zero AND user wins is less than 3
+   grantHealth+= 10; 
+   userWins +=1; 
+   console.log(`${user} has won ${userWins}`);
+ }
+
+ if ((userHealth === 0 || userHealth < 0) && grantWins < 3) { //its not letting grant win 3 times
+   userHealth+= 10;
+   grantWins += 1;
+   console.log("Grant wins!");
+   break;
+ }
+
+ if (userWins === 3) {
+   console.log(`${user} wins!`);
+   break;
+ }
+ 
+
+    
+}
+}
+
+ }
+        
+    else {
+        console.log("goodbye");
+        
+        }
+
+
+
+
+ 
+
+
+     
+     
+     
+     
+    
+</script>
